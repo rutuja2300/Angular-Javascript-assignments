@@ -1,0 +1,16 @@
+<!-- <p> {{ taskItem.desc +" "+taskItem.priority+" "+taskItem.status }}
+  <button (click)="onRemoveTask(taskItem.id)">Remove</button>
+</p>
+ -->
+
+ <div class="container mt-4">
+  <div class="row">
+
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <p class="mb-0">
+            {{ taskItem.desc }} <span class="badge bg-info">{{ taskItem.priority }}</span> <span class="badge bg-success">{{ taskItem.status }}</span>
+          </p>
+          <button class="btn btn-danger btn-sm" (click)="onRemoveTask(taskItem.id)">Remove</button>
+        </div>
+      </div>
+

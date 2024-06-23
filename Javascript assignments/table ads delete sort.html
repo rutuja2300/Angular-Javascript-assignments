@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #007bff; /* Bootstrap primary color */
+            box-shadow: 0 4px 6px -6px #222;
+        }
+        .navbar-brand {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white !important;
+        }
+        .navbar-nav {
+            margin-left: auto;
+        }
+        .nav-link {
+            color: white !important;
+        }
+        #content {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #343a40;
+        }
+        .portfolio-form, .portfolio-display {
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">MyWebsite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#" id="home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="portfolio">Portfolio</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                More
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container" id="content">
+          <h1>Welcome! This is the home page.</h1>
+      </div>
+
+      <div class="container" id="portfolio-section" style="display: none;">
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="portfolio-form">
+                      <h3>Fill Your Portfolio</h3>
+                      <form>
+                          <div class="form-group">
+                              <label for="name">Name</label>
+                              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                          </div>
+                          <div class="form-group">
+                              <label for="email">Email</label>
+                              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                          </div>
+                          <div class="form-group">
+                              <label for="mobile">Mobile Number</label>
+                              <input type="text" class="form-control" id="mobile" placeholder="Enter your mobile number">
+                          </div>
+                          <div class="form-group">
+                              <label for="about">About Yourself</label>
+                              <textarea class="form-control" id="about" rows="3" placeholder="Tell us about yourself"></textarea>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="portfolio-display">
+                      <h3>Your Portfolio</h3>
+                      <p><strong>Name:</strong> <span id="display-name"></span></p>
+                      <p><strong>Email:</strong> <span id="display-email"></span></p>
+                      <p><strong>Mobile Number:</strong> <span id="display-mobile"></span></p>
+                      <p><strong>About Yourself:</strong> <span id="display-about"></span></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('home').addEventListener('click', function() {
+            document.getElementById('content').innerHTML = '<h1>Welcome! This is the home page.</h1>';
+            document.getElementById('portfolio-section').style.display = 'none';
+        });
+
+        document.getElementById('contact').addEventListener('click', function() {
+            document.getElementById('content').innerHTML = '<h1>Welcome! This is the contact us page.</h1>';
+            document.getElementById('portfolio-section').style.display = 'none';
+        });
+
+        document.getElementById('about').addEventListener('click', function() {
+            document.getElementById('content').innerHTML = '<h1>Welcome! This is the about us page.</h1>';
+            document.getElementById('portfolio-section').style.display = 'none';
+        });
+
+        document.getElementById('portfolio').addEventListener('click', function() {
+             document.getElementById('content').innerHTML = '';
+            document.getElementById('portfolio-section').style.display = 'block';
+        });
+
+        document.getElementById('name').addEventListener('input', function() {
+            document.getElementById('display-name').innerText = this.value;
+        });
+
+        document.getElementById('email').addEventListener('input', function() {
+            document.getElementById('display-email').innerText = this.value;
+        });
+
+        document.getElementById('mobile').addEventListener('input', function() {
+            document.getElementById('display-mobile').innerText = this.value;
+        });
+
+        document.getElementById('about').addEventListener('input', function() {
+            document.getElementById('display-about').innerText = this.value;
+        });
+    </script>
+</body>
+</html>
